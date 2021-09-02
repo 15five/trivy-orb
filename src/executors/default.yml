@@ -4,7 +4,7 @@ docker:
   - image: 'cimg/base:<<parameters.tag>>'
 parameters:
   tag:
-    default: 2021.07
+    default: "2021.07"
     description: >
       Tag for 'cimg/base' docker container
     type: string
