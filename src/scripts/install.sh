@@ -1,6 +1,6 @@
 Install() {
     echo Hello "${PARAM_VERSION}"
-    curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v${PARAM_VERSION}
+    curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v"${PARAM_VERSION}"
     mkdir /tmp
     curl https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/junit.tpl -o /tmp/junit.tpl
 }
