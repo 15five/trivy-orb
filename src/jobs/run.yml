@@ -10,6 +10,10 @@ parameters:
     type: string
     default: "0.19.2"
     description: "Version of trivy to download"
+  install_location:
+    type: string
+    default: ./bin
+    descrption: "Where to install Trivy"
   args:
     type: string
     default: "-h"

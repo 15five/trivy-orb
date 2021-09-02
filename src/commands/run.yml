@@ -5,6 +5,10 @@ parameters:
     type: string
     default: "0.19.2"
     description: "Version of trivy to download"
+  install_location:
+    type: string
+    default: ./bin
+    descrption: "Where to install Trivy"
   args:
     type: string
     default: "-h"
@@ -13,6 +17,7 @@ steps:
   - run:
       environment:
         PARAM_VERSION: <<parameters.version>>
+        PARAM_BINDIR: <<parameters.install_location>>
       name: Install Trivy
       command: <<include(scripts/install.sh)>>
   - run:

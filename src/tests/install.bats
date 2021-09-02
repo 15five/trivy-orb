@@ -7,6 +7,7 @@ setup() {
 @test '1: Installs correctly' {
     # mock params
     export PARAM_VERSION=0.19.2
+    export PARAM_BINDIR=./bin
     # Capture the output of our "Greet" function
     result=$(Install)
     trivy -h
