@@ -8,7 +8,7 @@ setup() {
     # mock params
     export PARAM_VERSION=0.19.2
     export PARAM_BINDIR=.
-    # Capture the output of our "Greet" function
+    # Capture the output of our "Install" function
     result=$(Install)
     ./trivy -h
 }
