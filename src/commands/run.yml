@@ -8,7 +8,7 @@ parameters:
   install_location:
     type: string
     default: .
-    descrption: "Where to install Trivy"
+    description: "Where to install Trivy"
   args:
     type: string
     default: "-h"
