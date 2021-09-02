@@ -6,9 +6,9 @@ description: >
 usage:
   version: 2.1
   orbs:
-    trivy: fifteen5/trivy@1.2.3
+    trivy: fifteen5/trivy@1.0.0
   workflows:
     use-my-orb:
       jobs:
-        - trivy/run:
+        - trivy/scan:
             args: --no-progress --exit-code 1 image busybox
