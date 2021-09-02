@@ -4,7 +4,7 @@ Easily add and author [Reusable Commands](https://circleci.com/docs/2.0/reusing-
 
 Each _YAML_ file within this directory will be treated as an orb command, with a name which matches its filename.
 
-View the included _[greet.yml](./greet.yml)_ example.
+For example:
 
 ```yaml
 description: >
@@ -17,7 +17,7 @@ parameters:
     default: "Hello"
     description: "Select a proper greeting"
 steps:
-  - run:
+  - greeting:
       name: Hello World
       command: echo << parameters.greeting >> world
 ```

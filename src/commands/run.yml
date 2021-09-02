@@ -1,0 +1,20 @@
+description: >
+  This command runs Trivy.
+parameters:
+  version:
+    type: string
+    default: "0.19.2"
+    description: "Version of trivy to download"
+  args:
+    type: string
+    default: "-h"
+    description: "Arguments to pass into trivy. See https://aquasecurity.github.io/trivy/v0.19.2/getting-started/cli."
+steps:
+  - run:
+      environment:
+        PARAM_VERSION: <<parameters.version>>
+      name: Install Trivy
+      command: <<include(scripts/install.sh)>>
+  - run:
+      name: Run Trivy
+      command: trivy <<parameters.args>>

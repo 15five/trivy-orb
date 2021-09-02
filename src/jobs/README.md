@@ -6,7 +6,7 @@ Each _YAML_ file within this directory will be treated as an orb job, with a nam
 
 Jobs may invoke orb commands and other steps to fully automate tasks with minimal user configuration.
 
-View the included _[hello.yml](./hello.yml)_ example.
+For example:
 
 
 ```yaml
@@ -20,7 +20,7 @@ parameters:
     default: "Hello"
     description: "Select a proper greeting"
 steps:
-  - greet:
+  - run:
       greeting: << parameters.greeting >>
 ```
 
