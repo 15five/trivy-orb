@@ -20,7 +20,7 @@ parameters:
     default: "Hello"
     description: "Select a proper greeting"
 steps:
-  - run:
+  - scan:
       greeting: << parameters.greeting >>
 ```
 
