@@ -19,6 +19,6 @@ parameters:
     default: "-h"
     description: "Arguments to pass into trivy. See https://aquasecurity.github.io/trivy/v0.19.2/getting-started/cli."
 steps:
-  - run:
+  - scan:
       version: << parameters.version >>
       args: << parameters.args >>
