@@ -1,0 +1,24 @@
+description: >
+  Runs Trivy
+# What will this job do?
+# Descriptions should be short, simple, and clear.
+
+executor: default
+
+parameters:
+  version:
+    type: string
+    default: "0.19.2"
+    description: "Version of trivy to download"
+  install_location:
+    type: string
+    default: .
+    description: "Where to install Trivy"
+  args:
+    type: string
+    default: "-h"
+    description: "Arguments to pass into trivy. See https://aquasecurity.github.io/trivy/v0.19.2/getting-started/cli."
+steps:
+  - scan:
+      version: << parameters.version >>
+      args: << parameters.args >>
