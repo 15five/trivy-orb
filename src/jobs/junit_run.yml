@@ -1,0 +1,26 @@
+# Thanks to https://circleci.com/developer/orbs/orb/signavio/trivy
+description: "Run Trivy with JUnit test results"
+parameters:
+  version:
+    type: string
+    default: "0.19.2"
+    description: "Version of trivy to download"
+  install_location:
+    type: string
+    default: .
+    description: "Where to install Trivy"
+  args:
+    type: string
+    default: "-h"
+    description: "Arguments to pass into trivy. See https://aquasecurity.github.io/trivy/v0.19.2/getting-started/cli. Note that several args are already specified (see source)"
+  output-folder-path:
+    description: Output folder path.
+    type: string
+    default: 'trivy-scan-results'
+steps:
+  - scan:
+      args: --no-progress=true --exit-code=1 --format=template --template='@junit.tpl' --output=<<parameters.output-folder-path>>/junit.xml <<parameters.args>>
+  - store_test_results:
+      path: <<parameters.output-folder-path>>
+  - store_artifacts:
+      path: <<parameters.output-folder-path>>
